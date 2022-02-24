@@ -1,0 +1,89 @@
+*,
+::before,
+::after {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 90vh 5vh; /* vw would include the scrollbar */
+  grid-template-rows: 2vh 24vh 24vh 47vh 2vh;
+  overflow: hidden;  /* to get rid of scrollbar */
+}
+
+header {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  place-self: center;
+}
+
+#grid {
+  display: grid;
+  grid-column: 2 / 3;
+  grid-row: 2 / 5;
+  grid-template-columns: repeat(97, 1fr);
+  grid-template-rows: repeat(97, 1fr);
+}
+
+.grid > div {
+  border: 1px solid #000;
+  width: 100%;
+  height: 100%;
+}
+
+.buttons {
+  display: grid;
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.buttons button {
+  place-self: center;
+  width: 5vw;
+  padding: 0.31rem 0;
+  cursor: pointer;
+  font-size:90%;
+  color: #fff;
+  border-radius: 0.4rem;
+  transition: 60ms;
+}
+
+.btn-ctrl {
+  grid-row: 1 / 2;
+  background-color: #659765;
+  border: 1px solid #659765;
+}
+
+.btn-ctrl:hover {
+  background-color: #fff;
+  color: #659765;
+}
+
+.btn-random {
+  grid-row: 2 / 3;
+  background-color: #5290ab;
+  border: 1px solid #5290ab;
+}
+
+.btn-clear {
+  grid-row: 3 / 4;
+  background-color: #5290ab;
+  border: 1px solid #5290ab;
+}
+
+.btn-clear:hover,
+.btn-random:hover {
+  background-color: #fff;
+  color: #5290ab;
+}
+
+.active {
+  background-color: #a34e4e;
+  border: 1px solid #a34e4e;
+}
+
+.active:hover {
+  color: #a34e4e;
+}
